@@ -4,12 +4,12 @@ import { copy, SUPPORT_URL } from '../config/copy'
 export function SupportCTA() {
   return (
     <div
-      className="mt-8 flex flex-col items-center gap-4 rounded-[20px] px-6 py-8 text-center"
-      style={{ background: 'var(--brand)' }}
+      className="mt-6 flex flex-col items-center gap-3 rounded-[16px] px-5 py-5 text-center"
+      style={{ background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-hover) 100%)' }}
     >
       <h2
         className="font-semibold"
-        style={{ fontSize: 18, color: '#FFFFFF', margin: 0, maxWidth: 480 }}
+        style={{ fontSize: 14, color: '#FFFFFF', margin: 0, maxWidth: 420 }}
       >
         {copy.supportTitle}
       </h2>
@@ -18,13 +18,13 @@ export function SupportCTA() {
         href={SUPPORT_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-2 rounded-[14px]"
+        className="flex items-center gap-2 rounded-[12px]"
         style={{
           border: '1.5px solid rgba(255,255,255,.6)',
           color: '#FFFFFF',
-          fontSize: 14,
+          fontSize: 13,
           fontWeight: 600,
-          padding: '10px 20px',
+          padding: '7px 16px',
           textDecoration: 'none',
         }}
         onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,.14)' }}
