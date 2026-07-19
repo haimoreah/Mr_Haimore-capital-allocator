@@ -32,9 +32,15 @@ function App() {
         <Disclaimer />
       </main>
 
-      <footer className="pb-4 text-center text-xs text-slate-400 dark:text-slate-600">
-        {copy.footerOpenSource}
-      </footer>
+      {/* Brand signature — left-aligned regardless of RTL context */}
+      <div style={{ display: 'flex', justifyContent: 'flex-start', direction: 'ltr', marginTop: '24px', marginBottom: '12px', marginLeft: '4px' }}>
+        <img
+          src="/logo.png"
+          alt="Mr_Haimore Logo"
+          style={{ width: '80px', height: 'auto' }}
+          className="w-16 sm:w-20 opacity-80 dark:invert"
+        />
+      </div>
     </div>
   )
 }
