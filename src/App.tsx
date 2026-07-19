@@ -47,7 +47,7 @@ function App() {
             aria-label="Mr_Amwal على إنستغرام"
           >
             <img
-              src="/mrhaimore/capital-calculator/logo.png"
+              src="/mrhaimore/capital-calculator/mr-amwal-logo.png"
               alt="Mr_Amwal"
               className="brand-logo"
             />
