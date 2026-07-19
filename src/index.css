@@ -311,9 +311,9 @@ input[type='number'] { -moz-appearance: textfield; }
 
 /* ─── Tablet small (768–1023px) — single-column stacked ──────────────── */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .site-header           { height: 68px; }
+  .site-header           { height: 78px; }
   .site-header-inner     { padding: 0 24px; }
-  .brand-logo            { height: 34px; }
+  .brand-logo            { height: 40px; }
 
   .site-hero             { padding: 36px 24px 28px; }
   .site-hero-inner       { gap: 10px; }
@@ -331,9 +331,9 @@ input[type='number'] { -moz-appearance: textfield; }
 
 /* ─── Tablet large (1024–1199px) — 2-column compact ──────────────────── */
 @media (min-width: 1024px) and (max-width: 1199px) {
-  .site-header           { height: 72px; }
+  .site-header           { height: 84px; }
   .site-header-inner     { padding: 0 28px; }
-  .brand-logo            { height: 36px; }
+  .brand-logo            { height: 44px; }
 
   .site-hero             { padding: 40px 28px 32px; }
   .hero-title            { font-size: clamp(34px, 4.5vw, 48px); }
@@ -350,10 +350,10 @@ input[type='number'] { -moz-appearance: textfield; }
 
 /* ─── Desktop (≥ 1200px) — full 2-column at 1400px ───────────────────── */
 @media (min-width: 1200px) {
-  .site-header           { height: 80px; }
+  .site-header           { height: 96px; }
   .site-header-inner     { max-width: 1400px; padding: 0 48px; }
-  .brand-logo            { height: 44px; }
-  .brand-name            { font-size: 15px; }
+  .brand-logo            { height: 52px; }
+  .brand-name            { font-size: 16px; }
 
   .site-hero             { padding: 48px 48px 40px; }
   .site-hero-inner       { max-width: 1400px; gap: 14px; }
