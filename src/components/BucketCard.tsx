@@ -1,56 +1,50 @@
 import type { AllocationBucket } from '../domain/allocation'
+import type { BucketKey } from '../config/allocationRules'
 import { bucketCopy } from '../config/copy'
 import { formatNumber } from './formatNumber'
-import {
-  ArrowUpRight,
-  TrendingUp,
-  RefreshCw,
-  Wallet,
-} from 'lucide-react'
-import type { BucketKey } from '../config/allocationRules'
+import { ArrowUpRight, TrendingUp, RefreshCw, Wallet } from 'lucide-react'
 
 interface BucketCardProps {
   bucket: AllocationBucket
-  index: number
+  index:  number
 }
 
-const BUCKET_ICONS: Record<BucketKey, React.ReactNode> = {
-  firstEntry:          <ArrowUpRight size={16} strokeWidth={2} />,
-  firstReinforcement:  <TrendingUp   size={16} strokeWidth={2} />,
-  secondReinforcement: <RefreshCw    size={16} strokeWidth={2} />,
-  reserveLiquidity:    <Wallet       size={16} strokeWidth={2} />,
+const ICONS: Record<BucketKey, React.ReactNode> = {
+  firstEntry:          <ArrowUpRight size={15} strokeWidth={2.2} />,
+  firstReinforcement:  <TrendingUp   size={15} strokeWidth={2.2} />,
+  secondReinforcement: <RefreshCw    size={15} strokeWidth={2.2} />,
+  reserveLiquidity:    <Wallet       size={15} strokeWidth={2.2} />,
 }
 
 export function BucketCard({ bucket, index }: BucketCardProps) {
   const { label, description } = bucketCopy[bucket.key]
-  const icon = BUCKET_ICONS[bucket.key]
 
   return (
     <div
-      className="fade-in rounded-[18px] p-5"
+      className="fade-up rounded-[18px] p-5 flex flex-col gap-3"
       style={{
-        animationDelay: `${index * 60}ms`,
-        background: '#FFFFFF',
-        border: '1px solid #E5E7EB',
-        boxShadow: '0 1px 4px rgba(0,0,0,0.05)',
+        animationDelay: `${index * 55}ms`,
+        background:    'var(--bg-surface)',
+        border:        '1px solid var(--border)',
+        boxShadow:     'var(--shadow-card)',
       }}
     >
-      {/* Label + icon */}
+      {/* Header */}
       <div className="flex items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
           <span
-            className="flex h-7 w-7 items-center justify-center rounded-lg"
-            style={{ background: '#F0FBFF', color: '#11B5D9' }}
+            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg"
+            style={{ background: 'var(--brand-subtle)', color: 'var(--brand)' }}
           >
-            {icon}
+            {ICONS[bucket.key]}
           </span>
-          <h3 className="text-sm font-semibold" style={{ color: '#111111' }}>
+          <span className="text-sm font-semibold" style={{ color: 'var(--text-1)' }}>
             {label}
-          </h3>
+          </span>
         </div>
         <span
           className="shrink-0 rounded-full px-2.5 py-0.5 text-xs font-semibold tabular-nums"
-          style={{ background: '#F3F4F6', color: '#6B7280' }}
+          style={{ background: 'var(--bg-subtle)', color: 'var(--text-2)' }}
         >
           {bucket.percentage}٪
         </span>
@@ -58,14 +52,19 @@ export function BucketCard({ bucket, index }: BucketCardProps) {
 
       {/* Amount */}
       <p
-        className="mt-3 text-2xl font-bold tabular-nums tracking-tight"
-        style={{ color: '#11B5D9', letterSpacing: '-0.03em' }}
+        className="tabular-nums font-bold tracking-tight"
+        style={{
+          fontSize:      28,
+          letterSpacing: '-0.03em',
+          color:         'var(--brand)',
+          lineHeight:    1.1,
+        }}
       >
         {formatNumber(bucket.amount)}
       </p>
 
       {/* Description */}
-      <p className="mt-2 text-xs leading-relaxed" style={{ color: '#9CA3AF' }}>
+      <p className="text-sm leading-relaxed" style={{ color: 'var(--text-3)' }}>
         {description}
       </p>
     </div>
