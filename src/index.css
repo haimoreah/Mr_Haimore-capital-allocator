@@ -282,11 +282,64 @@ input[type='number'] { -moz-appearance: textfield; }
   .profile-card  { padding: 12px !important; }
 }
 
-/* ─── Tablet (768–1023px) ─────────────────────────────────────────────── */
+/* ─── Tablet small (768–1023px) — single-column stacked ──────────────── */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .site-header-inner    { padding: 0 24px; }
-  .site-hero            { padding: 40px 24px 36px; }
-  .site-content         { padding: 0 24px 48px; }
-  .content-grid--split  { grid-template-columns: 400px 1fr; gap: 20px; }
-  .form-card            { padding: 28px; }
+  .site-header           { height: 68px; }
+  .site-header-inner     { padding: 0 24px; }
+  .brand-logo            { height: 34px; }
+
+  .site-hero             { padding: 36px 24px 28px; }
+  .site-hero-inner       { gap: 10px; }
+  .hero-title            { font-size: clamp(32px, 5vw, 44px); }
+  .hero-sub              { font-size: 16px; }
+
+  .site-content          { padding: 0 24px 48px; }
+  /* Stack form + results vertically at this width — too narrow for side-by-side */
+  .content-grid--split   {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .form-card             { padding: 28px; max-width: 600px; margin-inline: auto; width: 100%; }
+}
+
+/* ─── Tablet large (1024–1199px) — 2-column compact ──────────────────── */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .site-header           { height: 72px; }
+  .site-header-inner     { padding: 0 28px; }
+  .brand-logo            { height: 36px; }
+
+  .site-hero             { padding: 40px 28px 32px; }
+  .hero-title            { font-size: clamp(34px, 4.5vw, 48px); }
+  .hero-sub              { font-size: 16px; max-width: 460px; }
+
+  .site-content          { padding: 0 28px 52px; }
+  .content-grid--split   {
+    grid-template-columns: 420px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .form-card             { padding: 28px; }
+}
+
+/* ─── Desktop (≥ 1200px) — full 2-column at 1400px ───────────────────── */
+@media (min-width: 1200px) {
+  .site-header           { height: 80px; }
+  .site-header-inner     { max-width: 1400px; padding: 0 48px; }
+  .brand-logo            { height: 44px; }
+  .brand-name            { font-size: 15px; }
+
+  .site-hero             { padding: 48px 48px 40px; }
+  .site-hero-inner       { max-width: 1400px; gap: 14px; }
+  .hero-title            { font-size: clamp(44px, 4.2vw, 66px); }
+  .hero-sub              { font-size: 18px; max-width: 520px; }
+  .hero-badge            { font-size: 11px; padding: 5px 12px; }
+
+  .site-content          { max-width: 1400px; padding: 0 48px 72px; }
+  .content-grid--split   {
+    grid-template-columns: 540px 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .form-card             { padding: 40px; }
+  .disclaimer-wrap       { margin-top: 20px; }
 }
