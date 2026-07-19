@@ -8,6 +8,8 @@ import { HowItWorks } from './components/HowItWorks'
 import { Disclaimer } from './components/Disclaimer'
 import { Footer } from './components/Footer'
 import { SkeletonResults } from './components/Skeleton'
+import characterImg from './assets/character.png'
+import logoImg from './assets/mr-amwal-logo.png'
 
 type Phase = 'idle' | 'loading' | 'result'
 
@@ -29,7 +31,7 @@ function App() {
 
       {/* ── Brand watermark — desktop only, behind all content ── */}
       <img
-        src="/mrhaimore/capital-calculator/character.png"
+        src={characterImg}
         alt=""
         aria-hidden="true"
         className="brand-watermark"
@@ -47,7 +49,7 @@ function App() {
             aria-label="Mr_Amwal على إنستغرام"
           >
             <img
-              src="/mrhaimore/capital-calculator/mr-amwal-logo.png"
+              src={logoImg}
               alt="Mr_Amwal"
               className="brand-logo"
             />
