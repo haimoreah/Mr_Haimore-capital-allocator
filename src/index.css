@@ -240,9 +240,9 @@ input[type='number'] { -moz-appearance: textfield; }
   display: none; /* hidden on mobile & tablet */
   position: fixed;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 95vh;
+  top: 0;
+  transform: translateY(-35%);
+  height: 130vh;
   width: auto;
   opacity: 1;
   z-index: 0;
@@ -250,11 +250,11 @@ input[type='number'] { -moz-appearance: textfield; }
   user-select: none;
   -webkit-mask-image:
     linear-gradient(to right,  transparent 0%,  black 18%, black 72%, transparent 96%),
-    linear-gradient(to bottom, transparent 0%,  black 12%, black 88%, transparent 100%);
+    linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
   -webkit-mask-composite: destination-in;
           mask-image:
     linear-gradient(to right,  transparent 0%,  black 18%, black 72%, transparent 96%),
-    linear-gradient(to bottom, transparent 0%,  black 12%, black 88%, transparent 100%);
+    linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
           mask-composite: intersect;
 }
 
