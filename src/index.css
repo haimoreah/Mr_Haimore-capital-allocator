@@ -7,7 +7,7 @@
   --bg-subtle:    #F3F5F7;
   --bg-muted:     #E8EAED;
   --border:       #E4E6EA;
-  --bg-header:    rgba(247,248,250,.92);
+  --bg-header:    linear-gradient(180deg, rgba(17,181,217,.16) 0%, rgba(234,249,252,.90) 100%);
 
   --text-1:       #0D0F12;
   --text-2:       #64748B;
