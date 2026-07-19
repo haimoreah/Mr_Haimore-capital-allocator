@@ -5,6 +5,7 @@ import { calculateAllocation, type AllocationResult } from './domain/allocation'
 import { CapitalForm } from './components/CapitalForm'
 import { AllocationResults } from './components/AllocationResults'
 import { HowItWorks } from './components/HowItWorks'
+import { WhyAllocate } from './components/WhyAllocate'
 import { Disclaimer } from './components/Disclaimer'
 import { Footer } from './components/Footer'
 import { SkeletonResults } from './components/Skeleton'
@@ -75,8 +76,13 @@ function App() {
             <CapitalForm onSubmit={handleSubmit} isLoading={phase === 'loading'} />
           </div>
 
-          {/* Right column: how-it-works, then loading skeleton, then results */}
-          {phase === 'idle'    && <HowItWorks />}
+          {/* Right column: how-it-works + why-allocate, then loading skeleton, then results */}
+          {phase === 'idle' && (
+            <div className="flex flex-col gap-4">
+              <HowItWorks />
+              <WhyAllocate />
+            </div>
+          )}
           {phase === 'loading' && <SkeletonResults />}
           {phase === 'result' && result && (
             <div className="fade-up">
