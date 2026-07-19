@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "m26TQuKIFfYTCyet_knpw"
+uri = "file://capital-calculator.zip"
+type = "unspecified"
+title = "capital-calculator.zip"
