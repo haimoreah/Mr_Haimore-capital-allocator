@@ -1,47 +1,56 @@
 import type { BucketKey, RiskProfile } from './allocationRules'
 
 export const copy = {
-  appTitle: 'موزّع رأس المال',
-  appSubtitle:
-    'أداة تعليمية تساعدك على تقسيم رأس مالك قبل الدخول إلى السوق، بعيدًا عن التداول العاطفي.',
+  appTitle: 'توزيع رأس المال',
+  appSubtitle: 'قسّم رأس مالك حسب أسلوبك في الاستثمار.',
 
-  capitalLabel: 'إجمالي رأس المال المتاح',
+  capitalLabel: 'كم رأس مالك؟',
   capitalPlaceholder: 'مثال: 10000',
-  capitalCurrencyHint: 'أدخل المبلغ بعملتك المفضّلة (دون كتابة رمز العملة)',
+  capitalCurrencyHint: 'أدخل المبلغ الذي تريد توزيعه.',
 
-  riskProfileLabel: 'أسلوبك في إدارة رأس المال',
+  riskProfileLabel: 'اختر أسلوبك',
   submit: 'احسب التوزيع',
 
   resultsTitle: 'التوزيع المقترح',
-  amountOf: (percentage: number) => `${percentage}٪ من رأس المال`,
 
-  disclaimerTitle: 'تنويه مهم',
+  disclaimerTitle: 'تنويه',
   disclaimer:
-    'هذه الأداة تعليمية بحتة، ولا تُعد توصية استثمارية أو تنبؤًا بالسوق أو إشارة تداول. الهدف هو تعليم مبادئ إدارة رأس المال فقط. اتخذ قراراتك الاستثمارية بعد بحث مستقل أو استشارة مختص مرخّص.',
+    'هذه الأداة تعليمية، وتهدف إلى مساعدتك على تنظيم رأس المال، ولا تعتبر توصية استثمارية أو ضمانًا لتحقيق الأرباح.',
 
-  footerOpenSource: 'أداة مفتوحة المصدر ضمن مجموعة أدوات Mr Haimore',
+  footerOpenSource: 'أداة مفتوحة المصدر — Mr_Haimore',
 
   validation: {
-    required: 'الرجاء إدخال مبلغ رأس المال',
-    positive: 'يجب أن يكون المبلغ رقمًا أكبر من صفر',
+    required: 'أدخل مبلغًا صحيحًا أولًا.',
   },
 } as const
 
 export const riskProfileCopy: Record<
   RiskProfile,
-  { label: string; description: string }
+  { label: string; bullets: readonly string[] }
 > = {
-  conservative: {
-    label: 'حذِر',
-    description: 'أولوية للسيولة والأمان، مناسب للمبتدئين',
+  defensive: {
+    label: 'دفاعي',
+    bullets: [
+      'سيولة أكبر للتعزيز إذا نزل السوق.',
+      'استفادة أقل إذا استمر السوق بالصعود.',
+      'مناسب للأسواق الهابطة.',
+    ],
   },
   balanced: {
-    label: 'متوازن',
-    description: 'توزيع متوسط بين الدخول والاحتياط',
+    label: 'متوسط',
+    bullets: [
+      'توازن بين الدخول والتعزيز.',
+      'استفادة متوازنة من الصعود.',
+      'مناسب لمعظم المستثمرين.',
+    ],
   },
-  growth: {
-    label: 'نمو',
-    description: 'دخول أكبر في السوق مع الاحتفاظ باحتياط أساسي',
+  aggressive: {
+    label: 'هجومي',
+    bullets: [
+      'دخول أكبر من البداية.',
+      'استفادة أكبر إذا استمر السوق بالصعود.',
+      'سيولة أقل للتعزيز.',
+    ],
   },
 }
 
@@ -50,19 +59,20 @@ export const bucketCopy: Record<
   { label: string; description: string }
 > = {
   firstEntry: {
-    label: 'الدخول الأول للسوق',
-    description: 'الجزء الذي تستخدمه لأول عملية شراء، دون استثمار كل رأس المال دفعة واحدة.',
+    label: 'الدخول الأول',
+    description: 'المبلغ الذي تدخل به السوق في أول صفقة.',
   },
-  futureOpportunities: {
-    label: 'فرص الشراء المستقبلية',
-    description: 'مبلغ محجوز لاستغلال فرص لاحقة أو تعزيز مراكزك عند الحاجة.',
+  firstReinforcement: {
+    label: 'التعزيز الأول',
+    description: 'مبلغ محجوز لتعزيز مركزك عند أول فرصة.',
   },
-  liquidity: {
-    label: 'السيولة المتاحة',
-    description: 'مبلغ نقدي جاهز للاستخدام المرن دون المساس بخطتك الاستثمارية.',
+  secondReinforcement: {
+    label: 'التعزيز الثاني',
+    description: 'مبلغ لتعزيز إضافي إذا استمر السوق بالنزول.',
   },
-  emergencyReserve: {
-    label: 'الاحتياطي الطارئ',
-    description: 'مبلغ لا يُستخدم في السوق، مخصص للظروف الطارئة خارج الاستثمار.',
+  reserveLiquidity: {
+    label: 'السيولة الاحتياطية',
+    description:
+      'مبلغ تحتفظ به إذا استمر السوق بالنزول بعد تنفيذ الدخولات الثلاث.',
   },
 }

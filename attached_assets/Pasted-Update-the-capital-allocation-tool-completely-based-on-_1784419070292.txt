@@ -1,0 +1,150 @@
+Update the capital allocation tool completely based on the following requirements.
+
+Important:
+- Do not change the overall design style.
+- Do not change the colors unless needed for readability.
+- Do not break any current functionality.
+- Keep the app fully responsive on mobile.
+- Keep Arabic RTL layout.
+- Keep the brand name: Mr_Haimore.
+- Do not add emojis or decorative icons.
+- Do not use English inside the Arabic interface unless necessary.
+
+Main title:
+توزيع رأس المال
+
+Subtitle:
+قسّم رأس مالك حسب أسلوبك في الاستثمار.
+
+Capital input title:
+كم رأس مالك؟
+
+Capital input helper:
+أدخل المبلغ الذي تريد توزيعه.
+
+Style selection title:
+اختر أسلوبك
+
+Create 3 selectable allocation cards:
+
+1. Defensive card
+
+Title:
+دفاعي
+
+Allocation percentages:
+15% • 25% • 40% • 20%
+
+Description points:
+سيولة أكبر للتعزيز إذا نزل السوق.
+استفادة أقل إذا استمر السوق بالصعود.
+مناسب للأسواق الهابطة.
+
+Allocation logic:
+- First entry: 15%
+- First reinforcement: 25%
+- Second reinforcement: 40%
+- Reserve liquidity: 20%
+
+2. Balanced card
+
+Title:
+متوسط
+
+Allocation percentages:
+25% • 30% • 30% • 15%
+
+Description points:
+توازن بين الدخول والتعزيز.
+استفادة متوازنة من الصعود.
+مناسب لمعظم المستثمرين.
+
+Allocation logic:
+- First entry: 25%
+- First reinforcement: 30%
+- Second reinforcement: 30%
+- Reserve liquidity: 15%
+
+3. Aggressive card
+
+Title:
+هجومي
+
+Allocation percentages:
+40% • 25% • 25% • 10%
+
+Description points:
+دخول أكبر من البداية.
+استفادة أكبر إذا استمر السوق بالصعود.
+سيولة أقل للتعزيز.
+
+Allocation logic:
+- First entry: 40%
+- First reinforcement: 25%
+- Second reinforcement: 25%
+- Reserve liquidity: 10%
+
+Calculation button:
+احسب التوزيع
+
+Results section title:
+التوزيع المقترح
+
+Display exactly 4 result cards:
+
+1.
+Title:
+الدخول الأول
+
+2.
+Title:
+التعزيز الأول
+
+3.
+Title:
+التعزيز الثاني
+
+4.
+Title:
+السيولة الاحتياطية
+
+Reserve liquidity explanation:
+مبلغ تحتفظ به إذا استمر السوق بالنزول بعد تنفيذ الدخولات الثلاث.
+
+Calculation requirements:
+- Calculate each amount based on the entered capital and selected style.
+- The four calculated values must always equal 100% of the entered capital.
+- Format numbers clearly with commas.
+- Update results immediately after calculation.
+- Prevent negative or invalid inputs.
+- Show a clear Arabic error message if the capital field is empty or invalid.
+
+Error message:
+أدخل مبلغًا صحيحًا أولًا.
+
+Disclaimer:
+هذه الأداة تعليمية، وتهدف إلى مساعدتك على تنظيم رأس المال، ولا تعتبر توصية استثمارية أو ضمانًا لتحقيق الأرباح.
+
+Branding:
+- Display Mr_Haimore clearly.
+- Keep the current logo if it already exists.
+- Do not replace or redesign the logo.
+
+UI improvements:
+- Show the percentages clearly inside each style card.
+- Highlight the selected card.
+- Make the differences between Defensive, Balanced, and Aggressive easy to understand at a glance.
+- Use a simple visual allocation bar for each option if it fits the current design.
+- The visual bar must represent the 4 percentages accurately.
+- Keep the interface clean and not crowded.
+- Make sure all Arabic text is readable on mobile.
+- Do not add extra sections.
+
+After finishing:
+1. Run the app.
+2. Test all 3 allocation styles.
+3. Verify every calculation totals 100%.
+4. Test mobile responsiveness.
+5. Fix any RTL or text overflow issues.
+6. Run the production build.
+7. Push all changes to the connected GitHub repository.

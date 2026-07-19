@@ -34,7 +34,7 @@ describe('calculateAllocation', () => {
   })
 
   it('handles small capital without losing units to rounding', () => {
-    const result = calculateAllocation(3, 'growth')
+    const result = calculateAllocation(3, 'aggressive')
     const sum = result.buckets.reduce((acc, b) => acc + b.amount, 0)
     expect(sum).toBe(3)
   })
@@ -49,9 +49,9 @@ describe('calculateAllocation', () => {
   })
 
   it('preserves the requested risk profile and total in the result', () => {
-    const result = calculateAllocation(5000, 'conservative')
+    const result = calculateAllocation(5000, 'defensive')
     expect(result.totalCapital).toBe(5000)
-    expect(result.riskProfile).toBe('conservative')
+    expect(result.riskProfile).toBe('defensive')
     expect(result.buckets).toHaveLength(4)
   })
 })
