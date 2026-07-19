@@ -115,7 +115,7 @@ export function CapitalForm({ onSubmit, isLoading = false }: CapitalFormProps) {
                 type="button"
                 disabled={isLoading}
                 onClick={() => setRiskProfile(profile)}
-                className="rounded-[14px] p-4 text-start"
+                className="profile-card rounded-[14px] p-4 text-start"
                 style={{
                   background:  selected ? accent.bg : 'var(--bg-subtle)',
                   border:      `1.5px solid ${selected ? accent.border : 'var(--border)'}`,

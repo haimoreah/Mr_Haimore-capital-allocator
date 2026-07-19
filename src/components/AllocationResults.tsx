@@ -17,8 +17,8 @@ export function AllocationResults({ result }: AllocationResultsProps) {
         {copy.resultsTitle}
       </p>
 
-      {/* Result cards grid */}
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+      {/* Result cards grid — always 2×2 (mobile + desktop) */}
+      <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
         {result.buckets.map((bucket, i) => (
           <BucketCard key={bucket.key} bucket={bucket} index={i} />
         ))}

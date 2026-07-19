@@ -21,8 +21,9 @@ export function BucketCard({ bucket, index }: BucketCardProps) {
 
   return (
     <div
-      className="fade-up rounded-[18px] p-5 flex flex-col gap-3"
+      className="bucket-card fade-up rounded-[18px] flex flex-col gap-2.5 sm:gap-3"
       style={{
+        padding:       20,
         animationDelay: `${index * 55}ms`,
         background:    'var(--bg-surface)',
         border:        '1px solid var(--border)',
@@ -52,7 +53,7 @@ export function BucketCard({ bucket, index }: BucketCardProps) {
 
       {/* Amount */}
       <p
-        className="tabular-nums font-bold tracking-tight"
+        className="bucket-amount tabular-nums font-bold tracking-tight"
         style={{
           fontSize:      28,
           letterSpacing: '-0.03em',

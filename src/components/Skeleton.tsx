@@ -33,7 +33,7 @@ export function SkeletonResults() {
     <section className="flex flex-col gap-3">
       {/* Section label */}
       <div className="h-4 w-28 rounded-lg skeleton" style={{ background: 'var(--bg-subtle)' }} />
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
         <SkeletonBucketCard delay={0}   />
         <SkeletonBucketCard delay={60}  />
         <SkeletonBucketCard delay={120} />

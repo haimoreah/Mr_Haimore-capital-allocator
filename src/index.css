@@ -105,3 +105,84 @@ input[type='number'] { -moz-appearance: textfield; }
 
 .fade-up  { animation: fadeUp 220ms ease-out both; }
 .skeleton { animation: skeletonPulse 1.6s ease-in-out infinite; }
+
+/* ─── Mobile sticky header ─────────────────────────────────── */
+.m-header {
+  display: none;
+}
+@media (max-width: 767px) {
+  .m-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 52px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg-base);
+    border-bottom: 1px solid var(--border);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+  .d-header { display: none !important; }
+}
+
+/* ─── Mobile hero block ─────────────────────────────────────── */
+.m-hero {
+  display: none;
+}
+@media (max-width: 767px) {
+  .m-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 16px 16px;
+    gap: 10px;
+  }
+  .m-hero-logo  { width: 128px; height: auto; }
+  .m-hero-title {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--text-1);
+    line-height: 1.2;
+    margin: 0;
+  }
+  .m-hero-sub {
+    font-size: 14px;
+    color: var(--text-2);
+    margin: 0;
+    max-width: 300px;
+    line-height: 1.6;
+  }
+}
+
+/* ─── Mobile layout overrides ──────────────────────────────── */
+@media (max-width: 767px) {
+  html, body { overflow-x: hidden; max-width: 100vw; }
+
+  body { font-size: 16px; }
+
+  :root {
+    --h-btn:   48px;
+    --h-input: 50px;
+  }
+
+  /* Bucket card: tighter padding + smaller amount */
+  .bucket-card  { padding: 14px !important; }
+  .bucket-amount {
+    font-size: 22px !important;
+    letter-spacing: -0.025em !important;
+  }
+
+  /* Profile cards: slightly compact */
+  .profile-card { padding: 12px !important; }
+}
+
+/* ─── Desktop layout ────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .m-header { display: none !important; }
+  .m-hero   { display: none !important; }
+}
