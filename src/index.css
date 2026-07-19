@@ -242,9 +242,9 @@ input[type='number'] { -moz-appearance: textfield; }
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  height: 70vh;
+  height: 95vh;
   width: auto;
-  opacity: 0.065;
+  opacity: 0.16;
   z-index: 0;
   pointer-events: none;
   user-select: none;
