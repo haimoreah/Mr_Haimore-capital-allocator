@@ -44,14 +44,14 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
             className="brand-link"
-            aria-label="Mr_Haimore على إنستغرام"
+            aria-label="Mr_Amwal على إنستغرام"
           >
             <img
               src="/mrhaimore/capital-calculator/logo.png"
-              alt="Mr_Haimore"
+              alt="Mr_Amwal"
               className="brand-logo"
             />
-            <span className="brand-name">Mr_Haimore</span>
+            <span className="brand-name">Mr_Amwal</span>
           </a>
         </div>
       </header>

@@ -1,7 +1,7 @@
 # Contributing
 
 Thanks for your interest in contributing to this project — the first tool in
-the Mr Haimore Tools collection.
+the Mr Amwal Tools collection.
 
 ## Principles
 

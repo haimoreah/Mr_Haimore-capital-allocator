@@ -32,12 +32,12 @@ export function Footer() {
           onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-3)' }}
         >
           <InstagramIcon size={13} />
-          <span>تابع Mr_Haimore</span>
+          <span>تابع Mr_Amwal</span>
         </a>
 
         {/* Right: copyright */}
         <span style={{ fontSize: 12, color: 'var(--text-3)', direction: 'rtl' }}>
-          © 2026 Mr_Haimore
+          © 2026 Mr_Amwal
         </span>
       </div>
     </footer>
