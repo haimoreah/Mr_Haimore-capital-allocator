@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { RiskProfile } from './config/allocationRules'
-import { copy } from './config/copy'
+import { copy, PERSONAL_PAGE_URL } from './config/copy'
 import { calculateAllocation, type AllocationResult } from './domain/allocation'
 import { CapitalForm } from './components/CapitalForm'
 import { AllocationResults } from './components/AllocationResults'
@@ -15,31 +15,62 @@ function App() {
   }
 
   return (
-    <div
-      className="mx-auto flex min-h-svh max-w-2xl flex-col gap-6 px-4 py-8 sm:py-10"
-      style={{ color: '#F8FAFC' }}
-    >
+    <div className="mx-auto flex min-h-svh max-w-2xl flex-col px-4 py-10 sm:py-14">
+
       {/* Header */}
-      <header className="flex flex-col gap-1.5 text-center">
-        <h1 className="text-2xl font-bold sm:text-3xl" style={{ color: '#F8FAFC' }}>
-          {copy.appTitle}
-        </h1>
-        <p className="text-sm sm:text-base" style={{ color: '#A7B0BC' }}>
-          {copy.appSubtitle}
-        </p>
+      <header className="mb-10 flex flex-col items-center gap-5 text-center">
+        {/* Logo */}
+        <a
+          href={PERSONAL_PAGE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="زيارة حساب Mr_Haimore على إنستغرام"
+          className="transition-opacity hover:opacity-70"
+          style={{ direction: 'ltr' }}
+        >
+          <img
+            src="/mrhaimore/capital-calculator/logo.png"
+            alt="Mr_Haimore"
+            className="h-10 w-auto sm:h-12"
+          />
+        </a>
+
+        {/* Title + subtitle */}
+        <div className="flex flex-col gap-2">
+          <h1
+            className="text-3xl font-bold tracking-tight sm:text-4xl"
+            style={{ color: '#111111', letterSpacing: '-0.02em' }}
+          >
+            {copy.appTitle}
+          </h1>
+          <p className="text-base sm:text-lg" style={{ color: '#6B7280' }}>
+            {copy.appSubtitle}
+          </p>
+        </div>
       </header>
 
       {/* Main content */}
-      <main className="flex flex-col gap-5">
+      <main className="flex flex-col gap-4">
+        {/* Form card */}
         <div
-          className="rounded-2xl p-5 sm:p-6"
-          style={{ background: '#0A0C0F', border: '1px solid #262D36' }}
+          className="rounded-[18px] p-6 sm:p-8"
+          style={{
+            background: '#FFFFFF',
+            border: '1px solid #E5E7EB',
+            boxShadow: '0 1px 4px rgba(0,0,0,0.05)',
+          }}
         >
           <CapitalForm onSubmit={handleSubmit} />
         </div>
 
-        {result && <AllocationResults result={result} />}
+        {/* Results */}
+        {result && (
+          <div className="fade-in">
+            <AllocationResults result={result} />
+          </div>
+        )}
 
+        {/* Disclaimer */}
         <Disclaimer />
       </main>
 

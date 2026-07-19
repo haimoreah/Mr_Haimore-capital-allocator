@@ -1,37 +1,71 @@
 import type { AllocationBucket } from '../domain/allocation'
 import { bucketCopy } from '../config/copy'
 import { formatNumber } from './formatNumber'
+import {
+  ArrowUpRight,
+  TrendingUp,
+  RefreshCw,
+  Wallet,
+} from 'lucide-react'
+import type { BucketKey } from '../config/allocationRules'
 
 interface BucketCardProps {
   bucket: AllocationBucket
+  index: number
 }
 
-export function BucketCard({ bucket }: BucketCardProps) {
+const BUCKET_ICONS: Record<BucketKey, React.ReactNode> = {
+  firstEntry:          <ArrowUpRight size={16} strokeWidth={2} />,
+  firstReinforcement:  <TrendingUp   size={16} strokeWidth={2} />,
+  secondReinforcement: <RefreshCw    size={16} strokeWidth={2} />,
+  reserveLiquidity:    <Wallet       size={16} strokeWidth={2} />,
+}
+
+export function BucketCard({ bucket, index }: BucketCardProps) {
   const { label, description } = bucketCopy[bucket.key]
+  const icon = BUCKET_ICONS[bucket.key]
 
   return (
     <div
-      className="rounded-xl p-4"
-      style={{ background: '#101318', border: '1px solid #262D36' }}
+      className="fade-in rounded-[18px] p-5"
+      style={{
+        animationDelay: `${index * 60}ms`,
+        background: '#FFFFFF',
+        border: '1px solid #E5E7EB',
+        boxShadow: '0 1px 4px rgba(0,0,0,0.05)',
+      }}
     >
-      <div className="flex items-baseline justify-between gap-2">
-        <h3 className="font-semibold" style={{ color: '#F8FAFC' }}>
-          {label}
-        </h3>
+      {/* Label + icon */}
+      <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center gap-2">
+          <span
+            className="flex h-7 w-7 items-center justify-center rounded-lg"
+            style={{ background: '#F0FBFF', color: '#11B5D9' }}
+          >
+            {icon}
+          </span>
+          <h3 className="text-sm font-semibold" style={{ color: '#111111' }}>
+            {label}
+          </h3>
+        </div>
         <span
-          className="shrink-0 rounded-full px-2 py-0.5 text-xs font-medium tabular-nums"
-          style={{ background: '#1C222A', color: '#A7B0BC' }}
+          className="shrink-0 rounded-full px-2.5 py-0.5 text-xs font-semibold tabular-nums"
+          style={{ background: '#F3F4F6', color: '#6B7280' }}
         >
           {bucket.percentage}٪
         </span>
       </div>
+
+      {/* Amount */}
       <p
-        className="mt-2 text-2xl font-bold tabular-nums"
-        style={{ color: '#20D6C7' }}
+        className="mt-3 text-2xl font-bold tabular-nums tracking-tight"
+        style={{ color: '#11B5D9', letterSpacing: '-0.03em' }}
       >
         {formatNumber(bucket.amount)}
       </p>
-      <p className="mt-2 text-sm" style={{ color: '#707986' }}>
+
+      {/* Description */}
+      <p className="mt-2 text-xs leading-relaxed" style={{ color: '#9CA3AF' }}>
         {description}
       </p>
     </div>
