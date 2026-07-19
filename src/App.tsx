@@ -7,6 +7,7 @@ import { AllocationResults } from './components/AllocationResults'
 import { HowItWorks } from './components/HowItWorks'
 import { WhyAllocate } from './components/WhyAllocate'
 import { Disclaimer } from './components/Disclaimer'
+import { SupportCTA } from './components/SupportCTA'
 import { Footer } from './components/Footer'
 import { SkeletonResults } from './components/Skeleton'
 import characterImg from './assets/character.png'
@@ -95,6 +96,8 @@ function App() {
         <div className="disclaimer-wrap">
           <Disclaimer />
         </div>
+
+        <SupportCTA />
 
         <Footer />
       </div>

@@ -1,6 +1,7 @@
 import type { BucketKey, RiskProfile } from './allocationRules'
 
 export const PERSONAL_PAGE_URL = 'https://www.instagram.com/mr_haimore/'
+export const SUPPORT_URL = 'https://t.me/AmwalSupport'
 
 export const copy = {
   appTitle: 'توزيع رأس المال',
@@ -54,6 +55,9 @@ export const copy = {
       description: 'بتعرف مسبقًا وين رايح كل دينار، وبيضل عندك احتياطي خارج السوق لأي طارئ.',
     },
   ],
+
+  supportTitle: 'تواصل مع فريق الدعم للإجابة على جميع استفساراتك',
+  supportButton: 'تواصل معنا على تيليجرام',
 } as const
 
 export const riskProfileCopy: Record<
