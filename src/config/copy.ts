@@ -22,6 +22,22 @@ export const copy = {
   validation: {
     required: 'أدخل مبلغًا صحيحًا أولًا.',
   },
+
+  howItWorksTitle: 'كيف تعمل الأداة؟',
+  howItWorksSteps: [
+    {
+      title: 'أدخل رأس مالك',
+      description: 'اكتب المبلغ الكلي اللي بدك تستثمره — بأي عملة.',
+    },
+    {
+      title: 'اختر أسلوبك',
+      description: 'دفاعي، متوسط، أو هجومي — حسب راحتك بالمخاطرة.',
+    },
+    {
+      title: 'شوف التوزيع',
+      description: 'بنقسم المبلغ فورًا على أربع فئات واضحة وجاهزة للتنفيذ.',
+    },
+  ],
 } as const
 
 export const riskProfileCopy: Record<

@@ -4,6 +4,7 @@ import { copy, PERSONAL_PAGE_URL } from './config/copy'
 import { calculateAllocation, type AllocationResult } from './domain/allocation'
 import { CapitalForm } from './components/CapitalForm'
 import { AllocationResults } from './components/AllocationResults'
+import { HowItWorks } from './components/HowItWorks'
 import { Disclaimer } from './components/Disclaimer'
 import { Footer } from './components/Footer'
 import { ThemeToggle } from './components/ThemeToggle'
@@ -25,8 +26,6 @@ function App() {
       setPhase('result')
     }, 380)
   }
-
-  const hasContent = phase !== 'idle'
 
   return (
     <div style={{ background: 'var(--bg-base)', minHeight: '100svh' }}>
@@ -74,26 +73,14 @@ function App() {
 
       {/* ── Main content ── */}
       <div className="site-content">
-        <main
-          className={
-            hasContent
-              ? 'content-grid content-grid--split'
-              : 'content-grid'
-          }
-        >
+        <main className="content-grid content-grid--split">
           {/* Form card */}
-          <div
-            className="form-card"
-            style={
-              !hasContent
-                ? { maxWidth: 600, marginInline: 'auto', width: '100%' }
-                : undefined
-            }
-          >
+          <div className="form-card">
             <CapitalForm onSubmit={handleSubmit} isLoading={phase === 'loading'} />
           </div>
 
-          {/* Results column */}
+          {/* Right column: how-it-works, then loading skeleton, then results */}
+          {phase === 'idle'    && <HowItWorks />}
           {phase === 'loading' && <SkeletonResults />}
           {phase === 'result' && result && (
             <div className="fade-up">
@@ -103,14 +90,7 @@ function App() {
         </main>
 
         {/* Disclaimer */}
-        <div
-          className="disclaimer-wrap"
-          style={
-            !hasContent
-              ? { maxWidth: 600, marginInline: 'auto', width: '100%' }
-              : undefined
-          }
-        >
+        <div className="disclaimer-wrap">
           <Disclaimer />
         </div>
 
