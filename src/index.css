@@ -2,7 +2,7 @@
 
 /* ─── Design tokens ──────────────────────────────────────────────────── */
 :root {
-  --bg-base:      #F7F8FA;
+  --bg-base:      linear-gradient(160deg, #FFFFFF 0%, #EAF9FC 55%, #CFEFF6 100%);
   --bg-surface:   #FFFFFF;
   --bg-subtle:    #F3F5F7;
   --bg-muted:     #E8EAED;
@@ -57,7 +57,8 @@ html  { color-scheme: light; }
 body {
   margin: 0;
   min-height: 100svh;
-  background-color: var(--bg-base);
+  background: var(--bg-base);
+  background-attachment: fixed;
   color: var(--text-1);
   font-family: var(--font-sans);
   font-size: 18px;
