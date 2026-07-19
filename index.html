@@ -8,8 +8,17 @@
       name="description"
       content="أداة تعليمية مجانية ومفتوحة المصدر تساعدك على تقسيم رأس مالك قبل الدخول إلى السوق، لتقليل التداول العاطفي وتعلّم إدارة رأس المال بشكل صحيح."
     />
-    <script type="module" crossorigin src="/mrhaimore/capital-calculator/assets/index-9is0NVsQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/mrhaimore/capital-calculator/assets/index-Dzbt0obb.css">
+    <!-- Prevent flash of wrong theme -->
+    <script>
+      try {
+        var t = localStorage.getItem('mr-haimore-theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch(e) {}
+    </script>
+    <script type="module" crossorigin src="/mrhaimore/capital-calculator/assets/index-kYMh-msq.js"></script>
+    <link rel="stylesheet" crossorigin href="/mrhaimore/capital-calculator/assets/index-C506vVlZ.css">
   </head>
   <body>
     <div id="root"></div>
