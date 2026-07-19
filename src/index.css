@@ -244,7 +244,7 @@ input[type='number'] { -moz-appearance: textfield; }
   transform: translateY(-50%);
   height: 95vh;
   width: auto;
-  opacity: 0.16;
+  opacity: 0.35;
   z-index: 0;
   pointer-events: none;
   user-select: none;
