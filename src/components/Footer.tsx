@@ -15,8 +15,6 @@ function InstagramIcon({ size = 13 }: { size?: number }) {
 interface FooterProps { theme: Theme }
 
 export function Footer({ theme: _ }: FooterProps) {
-  function noop(e: React.MouseEvent<HTMLAnchorElement>) { e.preventDefault() }
-
   return (
     <footer
       className="mt-12 pt-5 pb-2"
@@ -40,29 +38,10 @@ export function Footer({ theme: _ }: FooterProps) {
           <span>تابع Mr_Haimore</span>
         </a>
 
-        {/* Right: copyright + legal */}
-        <div
-          className="flex items-center gap-4"
-          style={{ direction: 'rtl' }}
-        >
-          <span style={{ fontSize: 12, color: 'var(--text-3)' }}>
-            © 2026 Mr_Haimore
-          </span>
-          <div className="flex gap-3" style={{ fontSize: 12, color: 'var(--text-3)' }}>
-            {['سياسة الخصوصية', 'شروط الاستخدام'].map(label => (
-              <a
-                key={label}
-                href="#"
-                onClick={noop}
-                style={{ color: 'inherit', textDecoration: 'none' }}
-                onMouseEnter={e => { e.currentTarget.style.color = 'var(--text-2)' }}
-                onMouseLeave={e => { e.currentTarget.style.color = 'var(--text-3)' }}
-              >
-                {label}
-              </a>
-            ))}
-          </div>
-        </div>
+        {/* Right: copyright */}
+        <span style={{ fontSize: 12, color: 'var(--text-3)', direction: 'rtl' }}>
+          © 2026 Mr_Haimore
+        </span>
       </div>
     </footer>
   )

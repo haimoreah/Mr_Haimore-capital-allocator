@@ -17,8 +17,6 @@ export function AllocationResults({ result }: AllocationResultsProps) {
           style={{
             fontSize:      11,
             fontWeight:    600,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
             color:         'var(--text-3)',
             whiteSpace:    'nowrap',
           }}

@@ -18,8 +18,6 @@ const PROFILE_ACCENT: Record<RiskProfile, { dot: string; border: string; bg: str
 const labelStyle: React.CSSProperties = {
   fontSize:      11,
   fontWeight:    600,
-  letterSpacing: '0.08em',
-  textTransform: 'uppercase',
   color:         'var(--text-3)',
 }
 
@@ -211,7 +209,6 @@ export function CapitalForm({ onSubmit, isLoading = false }: CapitalFormProps) {
           height:        'var(--h-btn)',
           borderRadius:  'var(--radius-btn)',
           fontSize:      15,
-          letterSpacing: '-0.01em',
           background:    isLoading
             ? 'var(--text-3)'
             : 'linear-gradient(160deg, #1AC5EE 0%, #11B5D9 55%, #0EA5C9 100%)',
