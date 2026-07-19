@@ -44,38 +44,8 @@
   --font-sans: 'Cairo', 'Segoe UI', system-ui, sans-serif;
 }
 
-[data-theme="dark"] {
-  --bg-base:    #0C0E14;
-  --bg-surface: #161922;
-  --bg-subtle:  #1E2230;
-  --bg-muted:   #252939;
-  --border:     #252939;
-  --bg-header:  rgba(12,14,20,.92);
-
-  --text-1: #F0F2FA;
-  --text-2: #8892AA;
-  --text-3: #49526A;
-
-  --brand-subtle: #0A1B2C;
-  --brand-ring:   rgba(17,181,217,.14);
-
-  --error:        #F87171;
-  --error-subtle: #2A1414;
-  --error-border: #4A2020;
-
-  --success:        #34D399;
-  --success-subtle: #0D2A1E;
-  --success-border: #1A4A38;
-
-  --shadow-card:       0 1px 3px rgba(0,0,0,.28), 0 4px 16px rgba(0,0,0,.36);
-  --shadow-card-hover: 0 4px 10px rgba(0,0,0,.36), 0 16px 40px rgba(0,0,0,.44);
-  --shadow-btn:        0 1px 2px rgba(17,181,217,.14), 0 4px 14px rgba(17,181,217,.20);
-  --shadow-elevated:   0 2px 4px rgba(0,0,0,.30), 0 8px 28px rgba(0,0,0,.42);
-}
-
 /* ─── Base ────────────────────────────────────────────────────────────── */
 html  { color-scheme: light; }
-[data-theme="dark"] { color-scheme: dark; }
 
 *, *::before, *::after {
   transition-property: background-color, border-color, color, fill, stroke,

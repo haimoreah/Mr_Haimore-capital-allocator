@@ -1,4 +1,3 @@
-import type { Theme } from '../hooks/useTheme'
 import { PERSONAL_PAGE_URL } from '../config/copy'
 
 function InstagramIcon({ size = 13 }: { size?: number }) {
@@ -12,9 +11,7 @@ function InstagramIcon({ size = 13 }: { size?: number }) {
   )
 }
 
-interface FooterProps { theme: Theme }
-
-export function Footer({ theme: _ }: FooterProps) {
+export function Footer() {
   return (
     <footer
       className="mt-12 pt-5 pb-2"

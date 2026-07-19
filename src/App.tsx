@@ -7,14 +7,11 @@ import { AllocationResults } from './components/AllocationResults'
 import { HowItWorks } from './components/HowItWorks'
 import { Disclaimer } from './components/Disclaimer'
 import { Footer } from './components/Footer'
-import { ThemeToggle } from './components/ThemeToggle'
 import { SkeletonResults } from './components/Skeleton'
-import { useTheme } from './hooks/useTheme'
 
 type Phase = 'idle' | 'loading' | 'result'
 
 function App() {
-  const { theme, toggle } = useTheme()
   const [phase, setPhase]   = useState<Phase>('idle')
   const [result, setResult] = useState<AllocationResult | null>(null)
 
@@ -53,12 +50,9 @@ function App() {
               src="/mrhaimore/capital-calculator/logo.png"
               alt="Mr_Haimore"
               className="brand-logo"
-              style={{ filter: theme === 'dark' ? 'invert(1) brightness(.9)' : 'none' }}
             />
             <span className="brand-name">Mr_Haimore</span>
           </a>
-
-          <ThemeToggle theme={theme} onToggle={toggle} />
         </div>
       </header>
 
@@ -94,7 +88,7 @@ function App() {
           <Disclaimer />
         </div>
 
-        <Footer theme={theme} />
+        <Footer />
       </div>
     </div>
   )
