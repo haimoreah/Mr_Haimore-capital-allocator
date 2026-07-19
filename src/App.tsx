@@ -31,6 +31,14 @@ function App() {
   return (
     <div style={{ background: 'var(--bg-base)', minHeight: '100svh' }}>
 
+      {/* ── Brand watermark — desktop only, behind all content ── */}
+      <img
+        src="/mrhaimore/capital-calculator/character.png"
+        alt=""
+        aria-hidden="true"
+        className="brand-watermark"
+      />
+
       {/* ── Unified sticky header ── */}
       <header className="site-header">
         <div className="site-header-inner">

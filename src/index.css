@@ -236,6 +236,33 @@ input[type='number'] { -moz-appearance: textfield; }
 
 .disclaimer-wrap { margin-top: 16px; }
 
+/* ─── Brand watermark ─────────────────────────────────────────────────── */
+.brand-watermark {
+  display: none; /* hidden on mobile & tablet */
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70vh;
+  width: auto;
+  opacity: 0.065;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  -webkit-mask-image:
+    linear-gradient(to right,  transparent 0%,  black 18%, black 72%, transparent 96%),
+    linear-gradient(to bottom, transparent 0%,  black 12%, black 88%, transparent 100%);
+  -webkit-mask-composite: destination-in;
+          mask-image:
+    linear-gradient(to right,  transparent 0%,  black 18%, black 72%, transparent 96%),
+    linear-gradient(to bottom, transparent 0%,  black 12%, black 88%, transparent 100%);
+          mask-composite: intersect;
+}
+
+@media (min-width: 1200px) {
+  .brand-watermark { display: block; }
+}
+
 /* ─── Bucket card hover ───────────────────────────────────────────────── */
 .bucket-card {
   cursor: default;
