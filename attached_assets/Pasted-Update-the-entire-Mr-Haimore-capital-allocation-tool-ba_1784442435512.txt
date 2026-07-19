@@ -1,0 +1,507 @@
+Update the entire Mr_Haimore capital allocation tool based on the following final requirements.
+
+Important:
+- Do not change or break the current calculation logic.
+- Do not change the overall layout structure unless needed for better spacing.
+- Keep the app fully responsive on mobile and desktop.
+- Keep the Arabic interface fully RTL.
+- Keep the current Mr_Haimore logo.
+- Do not redesign, recolor, crop, stretch, or modify the logo.
+- Do not add emojis.
+- Do not add unnecessary sections.
+- Do not use orange, brown, gold, purple, or blue.
+- Remove all old navy, brown, and orange colors from the interface.
+- Keep the design minimal, premium, and professional.
+
+--------------------------------------------------
+1. COLOR SYSTEM
+--------------------------------------------------
+
+Use a premium fintech palette based on:
+
+Main background:
+#050608
+
+Secondary background:
+#0A0C0F
+
+Cards:
+#101318
+
+Elevated cards:
+#15191F
+
+Primary white:
+#F8FAFC
+
+Secondary white:
+#E5E7EB
+
+Secondary text:
+#A7B0BC
+
+Muted text:
+#707986
+
+Primary turquoise:
+#20D6C7
+
+Dark turquoise:
+#129C93
+
+Primary red:
+#E63946
+
+Dark red:
+#A92330
+
+Default border:
+#262D36
+
+Soft divider:
+#1C222A
+
+Color usage rules:
+
+- Black must dominate the full interface.
+- White must be used for main titles, important text, and major numbers.
+- Turquoise must be the primary interactive color.
+- Red must be used sparingly for aggressive-style accents, warnings, and small highlights.
+- Do not use large red backgrounds.
+- Do not use large turquoise backgrounds except for the main button.
+- Do not use colorful gradients.
+- Do not use excessive glow effects.
+- Keep strong contrast and readability.
+
+Recommended visual balance:
+- Black and dark backgrounds: 70%
+- White and gray text: 20%
+- Turquoise accents: 7%
+- Red accents: 3%
+
+Overall design direction:
+Premium fintech tool.
+Minimal.
+Clean.
+Modern.
+Professional.
+Inspired by:
+Linear × Stripe × TradingView
+
+--------------------------------------------------
+2. PAGE HEADER
+--------------------------------------------------
+
+Main title:
+توزيع رأس المال
+
+Subtitle:
+قسّم رأس مالك حسب أسلوبك في الاستثمار.
+
+Style:
+- Main title in white.
+- Use turquoise only as a subtle accent if needed.
+- Subtitle in secondary gray.
+- Keep spacing clean and compact.
+- Do not use a large decorative header background.
+
+--------------------------------------------------
+3. CAPITAL INPUT
+--------------------------------------------------
+
+Input section title:
+كم رأس مالك؟
+
+Input helper text:
+أدخل المبلغ الذي تريد توزيعه.
+
+Input styling:
+- Dark card background.
+- White entered text.
+- Gray placeholder.
+- Default border: #262D36
+- Focus border: #20D6C7
+- Add a very subtle turquoise focus shadow.
+- Do not use a large glow.
+- Prevent negative values.
+- Prevent letters or invalid values.
+- Format numbers clearly.
+
+Error message:
+أدخل مبلغًا صحيحًا أولًا.
+
+Error styling:
+- Use red.
+- Keep it small and clear.
+- Do not use a full red box.
+
+--------------------------------------------------
+4. STYLE SELECTION
+--------------------------------------------------
+
+Section title:
+اختر أسلوبك
+
+Create exactly 3 selectable allocation cards.
+
+Keep all cards dark.
+Do not fill the entire card with the accent color.
+Use colors only in borders, small labels, percentages, and allocation bars.
+
+Selected card behavior:
+- Slightly brighter dark background.
+- Clear border.
+- Small check or selected indicator if already supported.
+- No large animation.
+- No excessive glow.
+
+Card 1:
+
+Title:
+دفاعي
+
+Percentages:
+15% • 25% • 40% • 20%
+
+Description:
+سيولة أكبر للتعزيز إذا نزل السوق.
+استفادة أقل إذا استمر السوق بالصعود.
+مناسب للأسواق الهابطة.
+
+Calculation:
+- First entry: 15%
+- First reinforcement: 25%
+- Second reinforcement: 40%
+- Reserve liquidity: 20%
+
+Visual accent:
+- Turquoise.
+- Selected border: turquoise.
+
+Card 2:
+
+Title:
+متوسط
+
+Percentages:
+25% • 30% • 30% • 15%
+
+Description:
+توازن بين الدخول والتعزيز.
+استفادة متوازنة من الصعود.
+مناسب لمعظم المستثمرين.
+
+Calculation:
+- First entry: 25%
+- First reinforcement: 30%
+- Second reinforcement: 30%
+- Reserve liquidity: 15%
+
+Visual accent:
+- White and neutral gray.
+- Selected border: turquoise.
+
+Card 3:
+
+Title:
+هجومي
+
+Percentages:
+40% • 25% • 25% • 10%
+
+Description:
+دخول أكبر من البداية.
+استفادة أكبر إذا استمر السوق بالصعود.
+سيولة أقل للتعزيز.
+
+Calculation:
+- First entry: 40%
+- First reinforcement: 25%
+- Second reinforcement: 25%
+- Reserve liquidity: 10%
+
+Visual accent:
+- Red.
+- Selected border: red.
+
+Card typography:
+- Title: white.
+- Percentages: white or turquoise.
+- Description: secondary gray.
+- Keep descriptions readable and not crowded.
+- Do not make the text too large on mobile.
+
+--------------------------------------------------
+5. ALLOCATION BARS
+--------------------------------------------------
+
+Add a simple segmented allocation bar inside each style card.
+
+The bar must accurately represent the four percentages.
+
+Segment colors:
+- First entry: #20D6C7
+- First reinforcement: #7CEAE1
+- Second reinforcement: #E63946
+- Reserve liquidity: #3B434D
+
+Important:
+- Keep the bar small and clean.
+- Do not add labels inside the bar if they become crowded.
+- Percentages must remain visible above or below the bar.
+- Make sure the proportions are mathematically accurate.
+
+--------------------------------------------------
+6. CALCULATION BUTTON
+--------------------------------------------------
+
+Button text:
+احسب التوزيع
+
+Button style:
+- Background: #20D6C7
+- Text: #050608
+- Font weight: bold
+- Border radius consistent with the current design.
+- Hover background: #129C93
+- Active state slightly darker.
+- No gradient.
+- No red button.
+- No glow larger than a subtle shadow.
+- Full width on mobile if appropriate.
+
+--------------------------------------------------
+7. RESULTS SECTION
+--------------------------------------------------
+
+Section title:
+التوزيع المقترح
+
+Display exactly 4 result cards:
+
+1.
+Title:
+الدخول الأول
+
+2.
+Title:
+التعزيز الأول
+
+3.
+Title:
+التعزيز الثاني
+
+4.
+Title:
+السيولة الاحتياطية
+
+Reserve explanation:
+مبلغ تحتفظ به إذا استمر السوق بالنزول بعد تنفيذ الدخولات الثلاث.
+
+Result styling:
+- Dark card backgrounds.
+- White labels.
+- Calculated amounts in turquoise.
+- Keep the amounts visually prominent.
+- Use red only for small aggressive-style indicators if needed.
+- Do not make any result card fully red.
+- Use subtle gray borders.
+- Keep all four cards consistent.
+
+Calculation requirements:
+- Calculate each amount using the selected allocation style.
+- The four result amounts must always equal exactly 100% of the entered capital.
+- Format large numbers with commas.
+- Prevent invalid totals.
+- Update results after pressing the calculation button.
+- Preserve current working functionality.
+
+--------------------------------------------------
+8. DISCLAIMER
+--------------------------------------------------
+
+Title:
+تنويه
+
+Text:
+هذه الأداة تعليمية، وتهدف إلى مساعدتك على تنظيم رأس المال، ولا تعتبر توصية استثمارية أو ضمانًا لتحقيق الأرباح.
+
+Disclaimer styling:
+- Remove the current brown and orange design completely.
+- Use a dark card background.
+- Add a subtle red border on the right side because the interface is RTL.
+- Title in white.
+- Text in secondary gray.
+- Keep the card compact.
+- Do not make the full section red.
+- Do not use orange or gold text.
+- Reduce the excessive empty space below this section.
+
+--------------------------------------------------
+9. FOOTER AND PERSONAL PROFILE
+--------------------------------------------------
+
+Create a clean professional footer below the disclaimer.
+
+The footer must not look empty or unfinished.
+
+Use this Instagram profile URL exactly:
+
+https://www.instagram.com/mr_haimore/
+
+Create one editable constant and use it everywhere:
+
+const PERSONAL_PAGE_URL = "https://www.instagram.com/mr_haimore/";
+
+Do not hard-code the same URL in multiple places.
+
+Keep the Mr_Haimore logo small at the bottom-left.
+
+Logo placement:
+- Visually aligned to the left even though the page is RTL.
+- Keep it inside the main content container.
+- Do not stick it directly to the browser edge.
+- Do not center it.
+- Desktop width: approximately 80px.
+- Mobile width: approximately 64px.
+- Height: auto.
+- No border.
+- No background box.
+- No shadow.
+- No logo redesign.
+- No logo recoloring.
+- No cropping.
+- Maintain the original aspect ratio.
+
+Use a footer wrapper with:
+- display: flex
+- justify-content: space-between
+- align-items: center
+- direction: ltr
+
+Make the logo clickable.
+
+When users click the logo, open:
+
+https://www.instagram.com/mr_haimore/
+
+Link requirements:
+- Open in a new browser tab.
+- Use target="_blank".
+- Use rel="noopener noreferrer".
+- Add a subtle turquoise hover effect.
+- Add cursor: pointer.
+- No large animation.
+
+Add this clickable text beside or near the logo:
+
+تابع Mr_Haimore
+
+This text must:
+- Open https://www.instagram.com/mr_haimore/
+- Open in a new tab.
+- Use turquoise.
+- Use a subtle underline or external-link arrow on hover.
+- Use rel="noopener noreferrer".
+- Stay visually secondary to the logo.
+
+Footer copyright text:
+
+© 2026 Mr_Haimore. جميع الحقوق محفوظة.
+
+Footer links:
+
+سياسة الخصوصية
+شروط الاستخدام
+
+For now:
+- Create the links visually.
+- Use href="#" only if actual pages do not exist.
+- Prevent the page from jumping when clicking placeholder links.
+- Do not create fake privacy or terms content.
+- Keep the links easy to replace later.
+
+Footer styling:
+- Transparent or black background.
+- Subtle top divider.
+- Gray copyright text.
+- Gray footer links.
+- Turquoise hover state.
+- Keep the footer compact.
+- Avoid excessive empty vertical space.
+- Do not add large social media icons.
+- Do not add TikTok, YouTube, Telegram, WhatsApp, or other platform icons.
+- The clickable logo and “تابع Mr_Haimore” text should be the main path to the Instagram profile.
+
+Suggested footer structure:
+
+Left side:
+- Small clickable Mr_Haimore logo.
+- تابع Mr_Haimore
+
+Right side:
+- © 2026 Mr_Haimore. جميع الحقوق محفوظة.
+- سياسة الخصوصية
+- شروط الاستخدام
+
+On mobile:
+- Stack the footer cleanly.
+- Keep the logo left-aligned.
+- Keep text readable.
+- Avoid large gaps.
+- Do not let items overflow the screen.
+- Keep the profile link easy to tap.
+
+--------------------------------------------------
+10. SPACING AND RESPONSIVENESS
+--------------------------------------------------
+
+- Reduce unnecessary blank space at the bottom of the page.
+- Keep consistent spacing between sections.
+- Use comfortable but not excessive padding.
+- Ensure the disclaimer and footer feel connected.
+- Test on small mobile screens.
+- Make sure all Arabic text wraps correctly.
+- Prevent horizontal scrolling.
+- Prevent the logo from becoming too large.
+- Make all cards fit correctly on mobile.
+- Keep touch targets accessible.
+
+--------------------------------------------------
+11. ACCESSIBILITY
+--------------------------------------------------
+
+- Maintain strong contrast.
+- Add proper alt text to the logo:
+  Mr_Haimore Logo
+- Add an accessible label to the Instagram link:
+  زيارة حساب Mr_Haimore على إنستغرام
+- Add visible keyboard focus states.
+- Ensure buttons and selectable cards are keyboard accessible.
+- Do not communicate selected states using color alone.
+- Use semantic HTML where possible.
+
+--------------------------------------------------
+12. FINAL VALIDATION
+--------------------------------------------------
+
+After completing all changes:
+
+1. Run the application.
+2. Check that no brown, orange, gold, navy, purple, or blue colors remain.
+3. Test the capital input.
+4. Test all three allocation styles.
+5. Verify every calculation totals exactly 100%.
+6. Test the button hover and focus states.
+7. Test the clickable logo.
+8. Test the “تابع Mr_Haimore” link.
+9. Confirm both open:
+   https://www.instagram.com/mr_haimore/
+10. Check desktop responsiveness.
+11. Check mobile responsiveness.
+12. Fix RTL alignment issues.
+13. Fix text overflow.
+14. Remove unnecessary empty space.
+15. Run the production build.
+16. Fix all build errors and warnings.
+17. Push all changes to the connected GitHub repository.

@@ -1,5 +1,7 @@
 import type { BucketKey, RiskProfile } from './allocationRules'
 
+export const PERSONAL_PAGE_URL = 'https://www.instagram.com/mr_haimore/'
+
 export const copy = {
   appTitle: 'توزيع رأس المال',
   appSubtitle: 'قسّم رأس مالك حسب أسلوبك في الاستثمار.',
@@ -16,8 +18,6 @@ export const copy = {
   disclaimerTitle: 'تنويه',
   disclaimer:
     'هذه الأداة تعليمية، وتهدف إلى مساعدتك على تنظيم رأس المال، ولا تعتبر توصية استثمارية أو ضمانًا لتحقيق الأرباح.',
-
-  footerOpenSource: 'أداة مفتوحة المصدر — Mr_Haimore',
 
   validation: {
     required: 'أدخل مبلغًا صحيحًا أولًا.',
