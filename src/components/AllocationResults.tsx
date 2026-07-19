@@ -1,3 +1,4 @@
+import { CheckCircle } from 'lucide-react'
 import type { AllocationResult } from '../domain/allocation'
 import { copy } from '../config/copy'
 import { BucketCard } from './BucketCard'
@@ -8,17 +9,33 @@ interface AllocationResultsProps {
 
 export function AllocationResults({ result }: AllocationResultsProps) {
   return (
-    <section className="flex flex-col gap-3" aria-live="polite">
-      {/* Section label */}
-      <p
-        className="text-xs font-semibold uppercase tracking-widest"
-        style={{ color: 'var(--text-3)', letterSpacing: '0.08em' }}
-      >
-        {copy.resultsTitle}
-      </p>
+    <section className="flex flex-col gap-4" aria-live="polite">
 
-      {/* Result cards grid — always 2×2 (mobile + desktop) */}
-      <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+      {/* Section label */}
+      <div className="flex items-center gap-3" style={{ direction: 'rtl' }}>
+        <span
+          style={{
+            fontSize:      11,
+            fontWeight:    600,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color:         'var(--text-3)',
+            whiteSpace:    'nowrap',
+          }}
+        >
+          {copy.resultsTitle}
+        </span>
+        <div
+          style={{
+            flex:       1,
+            height:     1,
+            background: 'var(--border)',
+          }}
+        />
+      </div>
+
+      {/* 2×2 grid — always */}
+      <div className="grid grid-cols-2 gap-3">
         {result.buckets.map((bucket, i) => (
           <BucketCard key={bucket.key} bucket={bucket} index={i} />
         ))}
@@ -26,21 +43,23 @@ export function AllocationResults({ result }: AllocationResultsProps) {
 
       {/* Success callout */}
       <div
-        className="fade-up mt-1 flex items-center gap-2.5 rounded-2xl px-4 py-3"
+        className="fade-up flex items-center gap-3 rounded-2xl px-4 py-3"
         style={{
-          animationDelay: '280ms',
-          background:    'var(--success-subtle)',
-          border:        '1px solid var(--success-border)',
+          animationDelay: '300ms',
+          background:     'var(--success-subtle)',
+          border:         '1px solid var(--success-border)',
         }}
       >
-        <span
-          className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-xs font-bold"
-          style={{ background: 'var(--success)', color: '#fff' }}
+        <CheckCircle
+          size={16}
+          strokeWidth={2.5}
+          style={{ color: 'var(--success)', flexShrink: 0 }}
+        />
+        <p
+          className="font-medium"
+          style={{ fontSize: 13, color: 'var(--success)', margin: 0 }}
         >
-          ✓
-        </span>
-        <p className="text-sm font-medium" style={{ color: 'var(--success)' }}>
-          تم حساب التوزيع بنجاح — المبالغ أعلاه تعكس أسلوبك المختار.
+          تم حساب التوزيع بنجاح — المبالغ تعكس أسلوبك المختار.
         </p>
       </div>
     </section>

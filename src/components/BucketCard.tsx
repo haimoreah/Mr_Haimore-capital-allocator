@@ -10,10 +10,10 @@ interface BucketCardProps {
 }
 
 const ICONS: Record<BucketKey, React.ReactNode> = {
-  firstEntry:          <ArrowUpRight size={15} strokeWidth={2.2} />,
-  firstReinforcement:  <TrendingUp   size={15} strokeWidth={2.2} />,
-  secondReinforcement: <RefreshCw    size={15} strokeWidth={2.2} />,
-  reserveLiquidity:    <Wallet       size={15} strokeWidth={2.2} />,
+  firstEntry:          <ArrowUpRight size={18} strokeWidth={2} />,
+  firstReinforcement:  <TrendingUp   size={18} strokeWidth={2} />,
+  secondReinforcement: <RefreshCw    size={18} strokeWidth={2} />,
+  reserveLiquidity:    <Wallet       size={18} strokeWidth={2} />,
 }
 
 export function BucketCard({ bucket, index }: BucketCardProps) {
@@ -21,31 +21,43 @@ export function BucketCard({ bucket, index }: BucketCardProps) {
 
   return (
     <div
-      className="bucket-card fade-up rounded-[18px] flex flex-col gap-2.5 sm:gap-3"
+      className="bucket-card fade-up rounded-[20px] flex flex-col gap-3"
       style={{
-        padding:       20,
-        animationDelay: `${index * 55}ms`,
-        background:    'var(--bg-surface)',
-        border:        '1px solid var(--border)',
-        boxShadow:     'var(--shadow-card)',
+        padding:        20,
+        animationDelay: `${index * 60}ms`,
+        background:     'var(--bg-surface)',
+        border:         '1px solid var(--border)',
+        boxShadow:      'var(--shadow-card)',
       }}
     >
-      {/* Header */}
-      <div className="flex items-center justify-between gap-2">
+      {/* Header row */}
+      <div className="flex items-start justify-between gap-2">
+        {/* Icon + label */}
         <div className="flex items-center gap-2.5">
           <span
-            className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl"
             style={{ background: 'var(--brand-subtle)', color: 'var(--brand)' }}
           >
             {ICONS[bucket.key]}
           </span>
-          <span className="text-sm font-semibold" style={{ color: 'var(--text-1)' }}>
+          <span
+            className="font-semibold leading-tight"
+            style={{ fontSize: 13, color: 'var(--text-1)' }}
+          >
             {label}
           </span>
         </div>
+
+        {/* Percentage badge */}
         <span
-          className="shrink-0 rounded-full px-2.5 py-0.5 text-xs font-semibold tabular-nums"
-          style={{ background: 'var(--bg-subtle)', color: 'var(--text-2)' }}
+          className="shrink-0 rounded-full px-2.5 py-1 tabular-nums font-bold"
+          style={{
+            fontSize:    12,
+            background:  'var(--brand-subtle)',
+            color:       'var(--brand)',
+            border:      '1px solid rgba(17,181,217,.18)',
+            lineHeight:  1,
+          }}
         >
           {bucket.percentage}٪
         </span>
@@ -53,19 +65,22 @@ export function BucketCard({ bucket, index }: BucketCardProps) {
 
       {/* Amount */}
       <p
-        className="bucket-amount tabular-nums font-bold tracking-tight"
+        className="bucket-amount tabular-nums font-extrabold"
         style={{
           fontSize:      28,
-          letterSpacing: '-0.03em',
+          letterSpacing: '-0.035em',
           color:         'var(--brand)',
-          lineHeight:    1.1,
+          lineHeight:    1,
         }}
       >
         {formatNumber(bucket.amount)}
       </p>
 
       {/* Description */}
-      <p className="text-sm leading-relaxed" style={{ color: 'var(--text-3)' }}>
+      <p
+        className="leading-relaxed"
+        style={{ fontSize: 13, color: 'var(--text-3)' }}
+      >
         {description}
       </p>
     </div>

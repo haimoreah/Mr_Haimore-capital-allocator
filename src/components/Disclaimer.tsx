@@ -4,24 +4,28 @@ import { copy } from '../config/copy'
 export function Disclaimer() {
   return (
     <div
-      className="flex items-start gap-3 rounded-[18px] p-5"
+      className="flex items-start gap-3 rounded-[16px] px-4 py-3.5"
       style={{
-        background: 'var(--bg-surface)',
+        background: 'var(--bg-subtle)',
         border:     '1px solid var(--border)',
-        boxShadow:  'var(--shadow-card)',
       }}
     >
-      <span
-        className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full"
-        style={{ background: 'var(--bg-subtle)', color: 'var(--text-3)' }}
-      >
-        <Info size={13} strokeWidth={2.5} />
-      </span>
-      <div className="flex flex-col gap-1">
-        <p className="text-sm font-semibold" style={{ color: 'var(--text-2)' }}>
+      <Info
+        size={14}
+        strokeWidth={2.5}
+        style={{ color: 'var(--text-3)', flexShrink: 0, marginTop: 2 }}
+      />
+      <div className="flex flex-col gap-0.5">
+        <p
+          className="font-semibold"
+          style={{ fontSize: 12, color: 'var(--text-2)', margin: 0 }}
+        >
           {copy.disclaimerTitle}
         </p>
-        <p className="text-sm leading-relaxed" style={{ color: 'var(--text-3)' }}>
+        <p
+          className="leading-relaxed"
+          style={{ fontSize: 12, color: 'var(--text-3)', margin: 0 }}
+        >
           {copy.disclaimer}
         </p>
       </div>
